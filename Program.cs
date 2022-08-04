@@ -41,8 +41,8 @@ string[] CreateNewStringArray(string[] MainStringArray, int StringLengthLimit = 
     int NewArrayLength = 0;
 
     for (int i = 0; i < MainStringArrayLength; i++)             // В данном цикле создаётся временный массив
-    {                                                           // с максимально возможной длиной, равной
-        if (MainStringArray[i].Length <= StringLengthLimit)     // длине исходного массива
+    {                                                           // с максимально возможной длиной, 
+        if (MainStringArray[i].Length <= StringLengthLimit)     // равной длине исходного массива
         {
             temp[NewArrayLength++] = MainStringArray[i];
         }
