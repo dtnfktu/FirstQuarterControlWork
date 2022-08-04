@@ -31,7 +31,7 @@ string ShowStringArray(string[] StringArray)
     result += "]";
     
     return result;
-}   //ShowAStringArray
+}   //ShowStringArray
 
 // Создание нового массива, содержащего строки длина которых меньше либо равна 3 символа
 string[] CreateNewStringArray(string[] MainStringArray, int StringLengthLimit = 3)
@@ -56,7 +56,6 @@ string[] CreateNewStringArray(string[] MainStringArray, int StringLengthLimit = 
     }
 
     return result;
-
 }   // CreateNewStringArray
 
 
@@ -68,4 +67,4 @@ Console.WriteLine("Исходный массив строк : \n" + ShowStringAr
 
 string[] NewStringArray = CreateNewStringArray(StringArray);
 
-Console.WriteLine("Полученный массив строк : \n" + ShowStringArray(NewStringArray));
+Console.WriteLine("\nПолученный массив строк : \n" + ShowStringArray(NewStringArray));
