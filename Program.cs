@@ -14,10 +14,10 @@ string[] AutoInitStringArray(int ArrayLength, int MinStringLength = 1, int MaxSt
     }
 
     return NewArray;
-}
+}   // AutoInitStringArray
 
 // Вывод массива строк
-string ShowAStringArray(string[] StringArray)
+string ShowStringArray(string[] StringArray)
 {
     string result = "[";
     int Len = StringArray.Length;
@@ -31,13 +31,41 @@ string ShowAStringArray(string[] StringArray)
     result += "]";
     
     return result;
-}
+}   //ShowAStringArray
 
+// Создание нового массива, содержащего строки длина которых меньше либо равна 3 символа
+string[] CreateNewStringArray(string[] MainStringArray, int StringLengthLimit = 3)
+{
+    string[] temp = new string[MainStringArray.Length];
+    int MainStringArrayLength = MainStringArray.Length;
+    int NewArrayLength = 0;
 
+    for (int i = 0; i < MainStringArrayLength; i++)             // В данном цикле создаётся временный массив
+    {                                                           // с максимально возможной длиной, равной
+        if (MainStringArray[i].Length <= StringLengthLimit)     // длине исходного массива
+        {
+            temp[NewArrayLength++] = MainStringArray[i];
+        }
+    }
+
+    string[] result = new string[NewArrayLength];
+
+    for (int i = 0; i < NewArrayLength; i++)                    // В данном цикле формируется массив
+    {                                                           // актуальной длины
+        result[i] = temp[i];
+    }
+
+    return result;
+
+}   // CreateNewStringArray
 
 
 Console.Clear();
 
 string[] StringArray = AutoInitStringArray(ArrayLength: 10);
 
-Console.WriteLine("Исходный массив строк : \n" + ShowAStringArray(StringArray));
+Console.WriteLine("Исходный массив строк : \n" + ShowStringArray(StringArray));
+
+string[] NewStringArray = CreateNewStringArray(StringArray);
+
+Console.WriteLine("Полученный массив строк : \n" + ShowStringArray(NewStringArray));
